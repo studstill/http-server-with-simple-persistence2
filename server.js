@@ -62,7 +62,7 @@ function startServer() {
     } else {
       // Make username lower case
       var username = JSON.stringify(request.body.username).toLowerCase();
-      var username = JSON.parse(username);
+      username = JSON.parse(username);
 
       // Ensure that a file with this user doesn't already exist
       var canSave = true;
@@ -107,7 +107,7 @@ function startServer() {
     } else {
       // Make username lower case
       var username = JSON.stringify(request.body.username).toLowerCase();
-      var username = JSON.parse(username);
+      username = JSON.parse(username);
 
       // Ensure that a file with this user doesn't already exist
       var canSave = false;
@@ -142,7 +142,6 @@ function startServer() {
     // Ensure that the username actually exists
     var canDelete = false;
     for (var keys in fileList) {
-        console.log(fileList[keys]);
       if (fileList[keys] === fileName) {
         canDelete = true;
       }
