@@ -4,7 +4,7 @@ For this assignment:
 
 It should:
 
-1. Respond to GET/POST/PUT/PATCH/DELETE requests for a single resource of your choosing, feel free to use express.
+1. Respond to GET/POST/PUT/DELETE requests for a single resource of your choosing, feel free to use express.
 
 2. The data coming in from a post request should be saved to a json file in a data folder in your repository, do not commit your data folder to git.
 
