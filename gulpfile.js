@@ -4,6 +4,7 @@ var jshint = require('gulp-jshint');
 
 gulp.task('default', ['test', 'lint'], function() {});
 
+
 gulp.task('test', function() {
   return gulp.src('test/*test.js')
              .pipe(mocha());
@@ -16,6 +17,5 @@ gulp.task('lint', function() {
              .pipe(jshint.reporter('jshint-stylish'));
 });
 
-gulp.watch(['*.js', 'test/*js'], ['test', 'lint'], function() {});
 
 
