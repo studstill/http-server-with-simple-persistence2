@@ -1,3 +1,5 @@
+'use strict';
+
 var fs = require('fs');
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -32,7 +34,7 @@ function startServer() {
     } else {
       // Respond with contents of data directory
       fs.readFile('data/' + fileList[fileIndex], function(err, data) {
-        if (err) throw err;
+        if (err) { throw err; }
         response.send(JSON.parse(data));
       });
     }
@@ -78,7 +80,7 @@ function startServer() {
         // Write contents of the file
         fs.writeFile('data/' + username + '.json',
           JSON.stringify(request.body), function(err, data) {
-          if (err) throw err;
+          if (err) { throw err; }
           response.send('File Sucessfully Saved!');
         });
       }
@@ -123,7 +125,7 @@ function startServer() {
         // Write contents of the file
         fs.writeFile('data/' + username + '.json',
           JSON.stringify(request.body), function(err, data) {
-          if (err) throw err;
+          if (err) { throw err; }
           response.send('File Sucessfully Updated!');
         });
       }
@@ -149,9 +151,9 @@ function startServer() {
     if (!canDelete) {
       response.send('That username does not exist!');
     } else {
-      fs.unlink('./data/' + nameToDelete +'.json', function(err) {
-        if (err) throw err;
-        response.send('Successfully deleted the file ' + nameToDelete +'.json');
+      fs.unlink('./data/' + nameToDelete + '.json', function(err) {
+        if (err) { throw err; }
+        response.send('Successfully deleted the file ' + nameToDelete + '.json');
       });
     }
   });
