@@ -1,3 +1,5 @@
+'use strict';
+
 var chai = require('chai');
 var expect = require('chai').expect;
 var chaiHttp = require('chai-http');
@@ -54,7 +56,7 @@ describe('server.js', function() {
     var numFiles = files.length;
     chai.request('localhost:3000')
       .post('/data')
-      .send({"username":"Joe"})
+      .send({'username':'Joe'})
       .then(function(response) {
         var newFiles = fs.readdirSync('./data');
         var newNumFiles = newFiles.length;
@@ -68,7 +70,7 @@ describe('server.js', function() {
     var files = fs.readFileSync('./data/joe.json', 'utf8');
     chai.request('localhost:3000')
       .put('/joe')
-      .send({"username":"Joe", "email":"joe@joe.com"})
+      .send({'username':'Joe', 'email':'joe@joe.com'})
       .then(function(response) {
         var newFiles = fs.readFileSync('./data/joe.json', 'utf8');
         expect(files).to.not.eql(newFiles);
