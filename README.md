@@ -1,13 +1,11 @@
-For this assignment:
+#HTTP Server with Simple Persistence
 
-- Write an http server that will act as a simple data store.
+###HTTP server that will act as a simple data store.
 
-It should:
+- Responds to `GET/POST/PUT/DELETE` requests for a single user resource consisting of username and email
 
-1. Respond to GET/POST/PUT/DELETE requests for a single resource of your choosing, feel free to use express.
+- The data coming in from a post request is saved to a json file in a `data` folder in your repository
 
-2. The data coming in from a post request should be saved to a json file in a data folder in your repository, do not commit your data folder to git.
+>For example if a request is sent to `/users` with a body of {username: 'user123'} the json data in the will be stored in it's own json file.
 
-For example if a request is sent to /notes with a body of {noteBody: 'hello world'} the json data in the body should be stored in it's own json file.
-
-3. You can pick a naming scheme for the file but I would recommend using the number of files that you have received so far. Submit as a pull request to your own repository.
+- The file-naming scheme uses the numbers (`file1.json`, `file2.json`, etc.) when creating files
